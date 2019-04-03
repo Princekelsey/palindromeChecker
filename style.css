@@ -119,8 +119,9 @@ button {
     width: 200px;
     left: 50%;
     transform: translateX(-50%);
-    color: black;
-    background: none;
+    color: white;
+    background: #b71540;;
+    border-radius: 15px;
     border: none;
     font-family: Lato, serif;
     font-size: 20px;
