@@ -5,10 +5,25 @@ const result = document.querySelector('.result');
 const refreshBtn = document.querySelector('.btn-new');
 
 
+// isPalindrome function
+const isPalindrome = word => {
+    let remove = /[^A-Za-z0-9]/g;
+    word = word.toLowerCase().replace(remove, '');
+    let wordLength = word.length;
+    for (let i = 0; i < wordLength/2; i++) {
+        if (word[i] !== word[wordLength - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+};
+
+
 // Add click event to the run test button
 runBtn.addEventListener('click',  () => {
     // get the input value from the user
     const inputData = document.querySelector('.inputText').value;
+
     // check if there is an input value
     if(inputData){
         isPalindrome(inputData);
@@ -37,16 +52,5 @@ refreshBtn.addEventListener('click', () => {
 });
 
 
-// isPalindrome function
-const isPalindrome = word => {
-    let remove = /[^A-Za-z0-9]/g;
-    word = word.toLowerCase().replace(remove, '');
-    let wordLength = word.length;
-    for (let i = 0; i < wordLength/2; i++) {
-        if (word[i] !== word[wordLength - 1 - i]) {
-            return false;
-        }
-    }
-    return true;
-};
+
 
