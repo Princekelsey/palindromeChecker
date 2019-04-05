@@ -38,7 +38,7 @@ refreshBtn.addEventListener('click', () => {
 
 
 // isPalindrome function
-const isPalindrome = (word) => {
+const isPalindrome = word => {
     let remove = /[^A-Za-z0-9]/g;
     word = word.toLowerCase().replace(remove, '');
     let wordLength = word.length;
