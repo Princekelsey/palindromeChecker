@@ -7,11 +7,14 @@ const refreshBtn = document.querySelector('.btn-new');
 
 // isPalindrome function
 const isPalindrome = word => {
+    // replace all non-words characters
     let remove = /[^A-Za-z0-9]/g;
+    // make all characters lower cased and replace all non-words characters
     word = word.toLowerCase().replace(remove, '');
-    let wordLength = word.length;
-    for (let i = 0; i < wordLength/2; i++) {
-        if (word[i] !== word[wordLength - 1 - i]) {
+    let wordLength = Math.floor(word.length / 2);
+    for (let i = 0; i < wordLength; i++) {
+        // check if the characters from each part match
+        if (word[i] !== word[word.length - 1 - i]) {
             return false;
         }
     }
